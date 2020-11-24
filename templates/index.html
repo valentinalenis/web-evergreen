@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block body %}
+<html>
+  <head>
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+  </head>
+  <body>
+    <a class="btn btn-success" href="/agregar_entrada">Nueva entrada</a>
+    <table class=" mt-3 mdl-data-table mdl-js-data-table  mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="text-center">Parámetro</th>
+          <th class="text-center">Dataset</th>
+          <th class="text-center">Nombre del producto</th>
+          <th class="text-center">Descripción</th>
+          <th class="text-center">Tipo producto</th>     
+          <th class="text-center">Imagen</th>     
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for param in entrada %}
+        <tr>
+          <td class="text-center">{{param.1}}</td>
+          <td class="text-center">{{param.2}}</td>
+          <td class="text-center">{{param.6}}</td>
+          <td class="text-center">{{param.4}}</td>
+          <td class="text-center">{{param.5}}</td>
+          <td class="text-center"><img src={{param.3}} class="img-fluid" alt="Imagen no disponible"></td>
+          <td>
+            <a href="/edit/{{param.0}}" class="btn btn-secondary"><img style="height: 15px; width: 15px;" src="../static/images/pencil.png"></a>
+            <a href="/delete/{{param.0}}" class="btn btn-danger btn-delete"><img style="height: 15px; width: 15px;" src="../static/images/delete.png"></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,8 @@
+.mdl-data-table {
+  position: relative;
+  border: 1px solid rgba(0,0,0,.12);
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 13px;
+  background-color: whitesmoke !important;
+}

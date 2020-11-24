@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <meta charset="UTF-8">
+    <title>EverGreen</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-dark bg-success">
+      <a class="navbar-brand" href="/">Entradas</a>
+    </nav>
+
+    <div class="container pt-4">
+      {% block body %}
+      {% endblock %}
+    </div>
+   
+  </body>
+</html>
